@@ -20,7 +20,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Background
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: House2
+    uniqueID: 3322294323
+    locked: 0
+  - name: BackgroundImage
+    uniqueID: 2645509327
     locked: 0
