@@ -21,19 +21,45 @@ public class Player : MonoBehaviour
 
     private Camera mainCam;
 
-    // public bool IsTurn {}
+    public bool IsTurn { get { return SquirrelManager.instance.IsMyTurn(playerID); } }
     // WormHealth wormHealth;
+
+    private Vector3 diff;
 
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // get health script
+
+        mainCam = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!IsTurn)
+            return;
+
+        RotateGun();
+
+        MovementAndShooting();
     }
+
+    void RotateGun() 
+    {
+        diff = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Mormalize();
+
+        float rot_Z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+
+        currentGun.rotation = Quaternion.Euler(0, 0, rot_Z + 180f);
+    }
+
+    void MovementAndShooting() { }
+
+
 }
