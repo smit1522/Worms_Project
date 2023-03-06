@@ -2303,7 +2303,7 @@ GameObject:
   - component: {fileID: 655474126}
   - component: {fileID: 655474127}
   m_Layer: 15
-  m_Name: BG
+  m_Name: BGColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
