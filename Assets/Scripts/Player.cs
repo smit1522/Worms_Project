@@ -52,14 +52,41 @@ public class Player : MonoBehaviour
     void RotateGun() 
     {
         diff = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        diff.Mormalize();
+        diff.Normalize();
 
         float rot_Z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
 
         currentGun.rotation = Quaternion.Euler(0, 0, rot_Z + 180f);
     }
 
-    void MovementAndShooting() { }
+    void MovementAndShooting() {
+
+        float hor = Input.GetAxis("Horizontal");
+
+        if(hor == 0) {
+
+            currentGun.gameObject.SetActive(true);
+
+            if (Input.GetKeyDown (KeyCode.E)) {
+                Rigidbody2D bullet = Instantiate(bulletPrefab, currentGun.position - currentGun.right, currentGun.rotation);
+
+                bullet.AddForce(-currentGun.right * missileForce, ForceMode2D.Impulse);
+
+                if (IsTurn) {
+                    SquirrelManager.instance.NextSquirrel();
+                }
+            }
+
+        }
+        else {
+            currentGun.gameObject.SetActive(false);
+
+            transform.position += Vector3.right * hor * Time.deltaTime * walkSpeed;
+
+            spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
+        }
+
+    }
 
 
 }

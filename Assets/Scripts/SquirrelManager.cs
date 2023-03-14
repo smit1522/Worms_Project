@@ -7,7 +7,7 @@ public class SquirrelManager : MonoBehaviour
 
     public static SquirrelManager instance;
 
-    private Squirrel[] squirrels;
+    private Player[] squirrels;
 
     private Transform squirrelCamera;
 
@@ -26,6 +26,8 @@ public class SquirrelManager : MonoBehaviour
         return i == currentSquirrel;
     }
 
-
+    public void NextSquirrel() {
+        
+    }
 
 }
