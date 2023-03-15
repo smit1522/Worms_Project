@@ -21,13 +21,43 @@ public class SquirrelManager : MonoBehaviour
             instance = this;
     }
 
+    private void Start()
+    {
+        // Squirrel might be Player>>>>>>>>>>>>>>
+        squirrels = GameObject.FindObjectsOfType<Player>();
+
+        squirrelCamera = Camera.main.transform;
+
+                    //might be PlayerID??
+        for(int i = 0; i< squirrels.Length; i++) {
+            squirrels[i].squirrelID = i;
+        }
+
+        NextSquirrel();
+    }
+
     public bool IsMyTurn(int i)
     {
         return i == currentSquirrel;
     }
 
     public void NextSquirrel() {
-        
+        StartCoroutine(_NextSquirrel());
+    }
+
+    public IEnumerator _NextSquirrel() {
+        int nextSquirrel = currentSquirrel + 1;
+        currentSquirrel -= 1;
+
+        yield return new WaitForSeconds(2f);
+
+        currentSquirrel = nextSquirrel;
+
+        if(currentSquirrel >= squirrels.Length)
+            currentSquirrel = 0;
+
+        squirrelCamera.SetParent(squirrels[currentSquirrel].transform);
+        squirrelCamera.localPosition = Vector3.zero + Vector3.back * 10f;
     }
 
 }
