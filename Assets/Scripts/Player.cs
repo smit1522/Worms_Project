@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
 
     private Vector3 diff;
 
+    // Audio
+    public AudioSource shootSound;
+
     
     // Start is called before the first frame update
     void Start()
@@ -97,7 +100,7 @@ public class Player : MonoBehaviour
 
 
             // is broken for some reason
-            
+
             // if(IsTurn)
             //     SquirrelManager.instance.NextSquirrel();
         }
@@ -109,11 +112,21 @@ public class Player : MonoBehaviour
 
 // Notes
 // 
-// Finish Background
+// Griffin's Tasks
+//
+// Friday Coding
 // Player win screen
-// Add Audio
+// 
+// Friday/Weekend
 // Add Animation
 // 
 // 
+// Adam's Tasks
+// 
+// Thursday
+// Add Audio
+// 
+// Thursday?/ Weekend
+// Finish Background
 // 
 // 
