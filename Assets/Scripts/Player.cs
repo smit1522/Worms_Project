@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    private Rigidbody2D bulletPrefab;
+    private Rigidbody2D acornPrefab;
 
     [SerializeField]
     private Transform currentGun;
@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     private Camera mainCam;
 
     public bool IsTurn { get { return SquirrelManager.instance.IsMyTurn(playerID); } }
-    // WormHealth wormHealth;
+    
+    private  SquirrelHealth squirrelHealth;
 
     private Vector3 diff;
 
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // get health script
+        squirrelHealth = GetComponent<SquirrelHealth>();
 
         mainCam = Camera.main;
 
@@ -68,9 +70,9 @@ public class Player : MonoBehaviour
             currentGun.gameObject.SetActive(true);
 
             if (Input.GetKeyDown (KeyCode.E)) {
-                Rigidbody2D bullet = Instantiate(bulletPrefab, currentGun.position - currentGun.right, currentGun.rotation);
+                Rigidbody2D acorn = Instantiate(acornPrefab, currentGun.position - currentGun.right, currentGun.rotation);
 
-                bullet.AddForce(-currentGun.right * missileForce, ForceMode2D.Impulse);
+                acorn.AddForce(-currentGun.right * missileForce, ForceMode2D.Impulse);
 
                 if (IsTurn) {
                     SquirrelManager.instance.NextSquirrel();
@@ -88,5 +90,30 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.CompareTag("Acorn")) {
+
+            squirrelHealth.ChangeHealth(-1);
+
+
+            // is broken for some reason
+            
+            // if(IsTurn)
+            //     SquirrelManager.instance.NextSquirrel();
+        }
+    }
+
 
 }
+
+
+// Notes
+// 
+// Finish Background
+// Player win screen
+// Add Audio
+// Add Animation
+// 
+// 
+// 
+// 

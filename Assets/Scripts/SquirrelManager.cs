@@ -23,14 +23,14 @@ public class SquirrelManager : MonoBehaviour
 
     private void Start()
     {
-        // Squirrel might be Player>>>>>>>>>>>>>>
+        
         squirrels = GameObject.FindObjectsOfType<Player>();
 
         squirrelCamera = Camera.main.transform;
 
                     //might be PlayerID??
         for(int i = 0; i< squirrels.Length; i++) {
-            squirrels[i].squirrelID = i;
+            squirrels[i].playerID = i;
         }
 
         NextSquirrel();
