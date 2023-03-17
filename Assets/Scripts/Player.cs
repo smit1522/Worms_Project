@@ -125,8 +125,12 @@ public class Player : MonoBehaviour
 // 
 // Thursday
 // Add Audio
-// 
+// Footstep Audio can't be added until Animation is ready
+// The Player Win screen needs to be added before I can add a 
+//
+//
+//
 // Thursday?/ Weekend
 // Finish Background
-// 
+// I have added the new House background asset and added more ground so that way the background color is not visible
 // 
