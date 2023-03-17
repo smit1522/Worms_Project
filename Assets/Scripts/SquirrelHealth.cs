@@ -26,7 +26,6 @@ public class SquirrelHealth : MonoBehaviour
     public AudioSource gameOverAudio;
 
     bool m_HasAudioPlayed;
-    float m_Timer;
 
     // might need TXTMeshPro here
     [SerializeField]
@@ -38,7 +37,7 @@ public class SquirrelHealth : MonoBehaviour
         health = maxHealth;
         healthTxt.text = health.ToString();
 
-        player = GameObject.Find("player");
+        player = GameObject.Find("squirrel");
 
     }
 
@@ -76,20 +75,11 @@ public class SquirrelHealth : MonoBehaviour
     // Game Ending screen when health is 0
     void EndLevel (CanvasGroup deadBackgroundImageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
-        m_Timer += Time.deltaTime;
 
-        deadBackgroundImageCanvasGroup.alpha = m_Timer / fadeDuration;
+        deadBackgroundImageCanvasGroup.alpha = 1;
 
-        if(m_Timer > fadeDuration + displayImageDuration)
-        {
-            Application.Quit ();
-        }
     }
 
-    // public void OnDestroy()
-    // {
-    //     EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
-    // }
 
 
 } //class
