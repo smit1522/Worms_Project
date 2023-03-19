@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
 
     private Vector3 diff;
 
+    public AudioSource squirrelFootsteps;
+
     // Animation
     public enum PlayerStates {
         IDLE,
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour
 
         mainCam = Camera.main;
 
+        squirrelFootsteps = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -79,6 +83,19 @@ public class Player : MonoBehaviour
         RotateGun();
 
         MovementAndShooting();
+
+        if (m_currentState == PlayerStates.WALK)
+        {
+            if(!squirrelFootsteps.isPlaying)
+            {
+                squirrelFootsteps.Play();
+            }
+
+        }
+        else
+        {
+            squirrelFootsteps.Stop();
+        }
     }
 
     void RotateGun() 
@@ -103,6 +120,8 @@ public class Player : MonoBehaviour
             // m_animator.SetFloat("yMove", hor.y);
 
             currentGun.gameObject.SetActive(true);
+
+            
 
             if (Input.GetKeyDown (KeyCode.E)) {
                 Rigidbody2D acorn = Instantiate(acornPrefab, currentGun.position - currentGun.right, currentGun.rotation);
@@ -130,9 +149,13 @@ public class Player : MonoBehaviour
             transform.position += Vector3.right * hor * Time.deltaTime * walkSpeed;
 
             spriteRenderer.flipX = Input.GetAxis("Horizontal") > 0;
+
+            
         }
+       
 
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.CompareTag("Acorn")) {
@@ -147,6 +170,7 @@ public class Player : MonoBehaviour
         }
     }
 
+  
 
 }
 
