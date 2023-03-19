@@ -24,6 +24,8 @@ public class SquirrelHealth : MonoBehaviour
     public CanvasGroup deadBackgroundImageCanvasGroup;
 
     public AudioSource gameOverAudio;
+    //public AudioSource gameStartAudio;
+    //public AudioClip gameStartClip;
 
     bool m_HasAudioPlayed;
 
@@ -39,7 +41,13 @@ public class SquirrelHealth : MonoBehaviour
 
         player = GameObject.Find("squirrel");
 
-        gameOverAudio = GetComponent<AudioSource>();
+        //gameOverAudio = GetComponent<AudioSource>();
+        //gameStartAudio = GetComponent<AudioSource>();
+        //gameStartClip = GetComponent<AudioClip>();
+
+
+        //gameStartAudio.Play(gameStartClip);
+        
 
     }
 
@@ -48,7 +56,9 @@ public class SquirrelHealth : MonoBehaviour
         
          if (player.gameObject == null)
          {
-             EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
+            EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
+
+            //gameStartAudio.Stop(gameStartClip);
          }
         
     }
@@ -75,7 +85,7 @@ public class SquirrelHealth : MonoBehaviour
     }
 
     // Game Ending screen when health is 0
-    void EndLevel (CanvasGroup deadBackgroundImageCanvasGroup, bool doRestart, AudioSource audioSource)
+    void EndLevel (CanvasGroup deadBackgroundImageCanvasGroup, bool doRestart, AudioSource gameOverAudio)
     {
 
         deadBackgroundImageCanvasGroup.alpha = 1;

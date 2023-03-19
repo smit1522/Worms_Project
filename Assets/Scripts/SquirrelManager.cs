@@ -26,7 +26,9 @@ public class SquirrelManager : MonoBehaviour
         
         squirrels = GameObject.FindObjectsOfType<Player>();
 
-        squirrelCamera = Camera.main.transform;
+        //Turns off camera
+
+        //squirrelCamera = Camera.main.transform;
 
                     //might be PlayerID??
         for(int i = 0; i< squirrels.Length; i++) {

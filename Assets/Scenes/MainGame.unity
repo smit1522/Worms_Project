@@ -1279,7 +1279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162385947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.890805, y: -0.19859406, z: -0.06857357}
+  m_LocalPosition: {x: -3.822, y: -0.19859406, z: -0.06857357}
   m_LocalScale: {x: 4.5522995, y: 4.5522995, z: 0.22761498}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3975,7 +3975,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1362360084, guid: 95ca290d3d5a939439c22e07e7da4638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4333,7 +4333,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1043391694, guid: 95ca290d3d5a939439c22e07e7da4638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4828,7 +4828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512631850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.83903426, y: -0.023330526, z: -0.06857357}
+  m_LocalPosition: {x: 0.796, y: -0.023330526, z: -0.06857357}
   m_LocalScale: {x: 4.5522995, y: 4.5522995, z: 0.22761498}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6603,6 +6603,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 1}
+      - {x: -0.55650043, y: 1.981852}
+      - {x: -0.55445933, y: 0.7799848}
       - {x: -0.9054931, y: 0.30901694}
       - {x: -3.2218769, y: 0.09800154}
       - {x: -3.761428, y: 0.19646627}
@@ -6616,7 +6618,8 @@ PolygonCollider2D:
       - {x: -8.051802, y: -0.7922859}
       - {x: -8.91951, y: 0.07705569}
       - {x: -11.529986, y: 0.08758634}
-      - {x: -11.518519, y: 1.8326595}
+      - {x: -9.847042, y: 0.12510425}
+      - {x: -9.8310795, y: 2.3582559}
       - {x: -11.891377, y: -0.0668993}
       - {x: -8.66138, y: -1.0195768}
       - {x: -7.922795, y: -1.0398195}
@@ -6635,8 +6638,8 @@ PolygonCollider2D:
       - {x: 10.832416, y: 0.59904283}
       - {x: 10.687432, y: 2.4572086}
       - {x: 10.662576, y: 0.8641048}
-      - {x: 10.505401, y: 0.8332026}
-      - {x: 10.359674, y: 0.81746274}
+      - {x: 9.93831, y: 2.271676}
+      - {x: 9.917067, y: 1.024935}
       - {x: 9.852658, y: 0.9294686}
       - {x: 9.525795, y: 0.8398838}
       - {x: 8.959227, y: 0.42070633}
@@ -6654,7 +6657,8 @@ PolygonCollider2D:
       - {x: 2.3782258, y: 0.20021755}
       - {x: 1.7215981, y: 0.18301421}
       - {x: 1.3263674, y: 0.2917238}
-      - {x: 0.88005614, y: 0.5551518}
+      - {x: 0.8043051, y: 0.7465257}
+      - {x: 0.7832358, y: 1.9521313}
 --- !u!1 &700873727
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,7 +7642,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 42957eaa8fe404342b707595a5c51083, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.121
   m_Pitch: 1
   Loop: 0
@@ -9869,7 +9873,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1886058099, guid: 95ca290d3d5a939439c22e07e7da4638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10687,7 +10691,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1213921193, guid: 95ca290d3d5a939439c22e07e7da4638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11909,7 +11913,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1213921193, guid: 95ca290d3d5a939439c22e07e7da4638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20086,6 +20090,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3624729900047362066, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594557290505906401, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
+      propertyPath: gameOverAudio
+      value: 
+      objectReference: {fileID: 516993889}
+    - target: {fileID: 4594557290505906401, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
+      propertyPath: gameStartClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 42957eaa8fe404342b707595a5c51083, type: 3}
+    - target: {fileID: 4594557290505906401, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
+      propertyPath: gameStartAudio
+      value: 
+      objectReference: {fileID: 756369191}
     - target: {fileID: 4594557290505906401, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
       propertyPath: deadBackgroundImageCanvasGroup
       value: 

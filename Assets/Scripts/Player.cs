@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown (KeyCode.E)) {
                 Rigidbody2D acorn = Instantiate(acornPrefab, currentGun.position - currentGun.right, currentGun.rotation);
 
-                acorn.AddForce(-currentGun.right * missileForce, ForceMode2D.Impulse);
+                acorn.AddForce(-currentGun.right * 10f, ForceMode2D.Impulse);
 
                 if (IsTurn) {
                     SquirrelManager.instance.NextSquirrel();
