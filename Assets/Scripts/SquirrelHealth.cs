@@ -39,15 +39,17 @@ public class SquirrelHealth : MonoBehaviour
 
         player = GameObject.Find("squirrel");
 
+        gameOverAudio = GetComponent<AudioSource>();
+
     }
 
     void Update ()
     {
         
-        // if (player.gameObject == null)
-        // {
-        //     EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
-        // }
+         if (player.gameObject == null)
+         {
+             EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
+         }
         
     }
 
@@ -77,6 +79,8 @@ public class SquirrelHealth : MonoBehaviour
     {
 
         deadBackgroundImageCanvasGroup.alpha = 1;
+
+        
 
     }
 
