@@ -480,11 +480,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 4594557290505906403}
-  maxHealth: 3
+  maxHealth: 10
   fadeDuration: 1
   displayImageDuration: 1
   deadBackgroundImageCanvasGroup: {fileID: 0}
   gameOverAudio: {fileID: 0}
+  gameStartAudio: {fileID: 0}
   healthTxt: {fileID: 4594557289637778204}
 --- !u!70 &4594557290505906400
 CapsuleCollider2D:

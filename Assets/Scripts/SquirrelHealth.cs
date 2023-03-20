@@ -14,7 +14,7 @@ public class SquirrelHealth : MonoBehaviour
     // Health Section
 
     private int health;
-    public int maxHealth = 3;
+    public int maxHealth = 10;
 
     // GameOver section
 
@@ -24,10 +24,11 @@ public class SquirrelHealth : MonoBehaviour
     public CanvasGroup deadBackgroundImageCanvasGroup;
 
     public AudioSource gameOverAudio;
-    //public AudioSource gameStartAudio;
-    //public AudioClip gameStartClip;
+    public AudioSource gameStartAudio;
+   
 
-    bool m_HasAudioPlayed;
+    bool m_HasStartAudioPlayed;
+    bool m_HasEndAudioPlayed;
 
     // might need TXTMeshPro here
     [SerializeField]
@@ -38,28 +39,25 @@ public class SquirrelHealth : MonoBehaviour
     {
         health = maxHealth;
         healthTxt.text = health.ToString();
-
+      
         player = GameObject.Find("squirrel");
-
-        //gameOverAudio = GetComponent<AudioSource>();
-        //gameStartAudio = GetComponent<AudioSource>();
-        //gameStartClip = GetComponent<AudioClip>();
-
-
-        //gameStartAudio.Play(gameStartClip);
-        
+        if (!m_HasStartAudioPlayed)
+            {
+                gameStartAudio.Play();
+                m_HasStartAudioPlayed = true;
+            }
 
     }
 
     void Update ()
     {
-        
-         if (player.gameObject == null)
-         {
-            EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
-
+         
+        // if (player.gameObject == null)
+       //  {
+            //EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
+            //gameOverAudio.play()
             //gameStartAudio.Stop(gameStartClip);
-         }
+        // }
         
     }
 
@@ -71,6 +69,9 @@ public class SquirrelHealth : MonoBehaviour
         if(health > maxHealth)
         {
             health = maxHealth;
+
+            
+            
         }
         else if(health <= 0)
         {
@@ -78,6 +79,7 @@ public class SquirrelHealth : MonoBehaviour
             //Destroy(this.gameObject);
             player.SetActive(false);
             EndLevel (deadBackgroundImageCanvasGroup, false, gameOverAudio);
+            
         }
 
         // might need TXTMeshPro here
@@ -90,10 +92,22 @@ public class SquirrelHealth : MonoBehaviour
 
         deadBackgroundImageCanvasGroup.alpha = 1;
 
+        if (m_HasStartAudioPlayed == true)
+            {
+                gameStartAudio.Stop();
+                m_HasStartAudioPlayed = false;
+            }
+
+        if (!m_HasEndAudioPlayed)
+        {
+            gameOverAudio.Play();
+            m_HasEndAudioPlayed = true;
+        }
+
         
 
     }
 
-
+//AudioSource gameOverAudio
 
 } //class
