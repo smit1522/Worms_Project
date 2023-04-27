@@ -15,6 +15,8 @@ public class Ground : MonoBehaviour
     private float _widthWorld, _heightWorld;
     private float _widthPixel, _heightPixel;
 
+    public AudioSource acornMiss;
+
 
 
     // Start is called before the first frame update
@@ -74,11 +76,20 @@ public class Ground : MonoBehaviour
         }
     }
 
-void UpdateTexture()
+    void UpdateTexture()
 {
 
     spriteRenderer.sprite = Sprite.Create(cloneTexture, new Rect(0, 0, cloneTexture.width, cloneTexture.height), new Vector2(0.5f, 0.5f), 50f);
 }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Acorn"))
+        {
+            acornMiss.Play();
+        }
+    }
+
+
+
 } // Class

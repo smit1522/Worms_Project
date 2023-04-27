@@ -25,7 +25,7 @@ public class SquirrelHealth : MonoBehaviour
 
     public AudioSource gameOverAudio;
     public AudioSource gameStartAudio;
-   
+    public AudioSource squirrelHit;
 
     bool m_HasStartAudioPlayed;
     bool m_HasEndAudioPlayed;
@@ -61,6 +61,13 @@ public class SquirrelHealth : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Acorn"))
+        {
+            squirrelHit.Play();
+        }
+    }
 
     public void ChangeHealth(int change) {
 

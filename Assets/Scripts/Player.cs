@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
     private Vector3 diff;
 
     public AudioSource squirrelFootsteps;
-
+    
     // Animation
     public enum PlayerStates {
         IDLE,
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
     private Animator m_animator;
 
     // Audio
-    public AudioSource shootSound;
+    
 
     
     // Start is called before the first frame update
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour
         mainCam = Camera.main;
 
         squirrelFootsteps = GetComponent<AudioSource>();
+
+        
 
     }
 
@@ -162,40 +165,21 @@ public class Player : MonoBehaviour
 
             squirrelHealth.ChangeHealth(-1);
 
+            
+               
 
             // is broken for some reason
 
             // if(IsTurn)
             //     SquirrelManager.instance.NextSquirrel();
         }
+
     }
 
+   
   
 
 }
 
 
-// Notes
-// 
-// Griffin's Tasks
-//
-// Friday Coding
-// Player win screen
-// 
-// Friday/Weekend
-// Add Animation
-// 
-// 
-// Adam's Tasks
-// 
-// Thursday
-// Add Audio
-// Footstep Audio can't be added until Animation is ready
-// The Player Win screen needs to be added before I can add a 
-//
-//
-//
-// Thursday?/ Weekend
-// Finish Background
-// I have added the new House background asset and added more ground so that way the background color is not visible
-// 
+ 
