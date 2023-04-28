@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     }
 
     public float walkSpeed = 1f;
-    public float maxRelativeVelocity = 6f;
-    public float missileForce = 5f;
+    public float maxRelativeVelocity = 10f;
+    public float missileForce = 10f;
 
     public int playerID;
 

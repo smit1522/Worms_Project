@@ -6,36 +6,45 @@ public class Ground : MonoBehaviour
 {
 
     [SerializeField]
-    private Texture2D baseTexture;
+    //private Texture2D baseTexture;
 
-    private Texture2D cloneTexture;
+    //private Texture2D cloneTexture;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
 
-    private float _widthWorld, _heightWorld;
-    private float _widthPixel, _heightPixel;
+    //private float _widthWorld, _heightWorld;
+    //private float _widthPixel, _heightPixel;
 
     public AudioSource acornMiss;
-    public Animator acornMissAnimation;
+    //public Animator acornMissAnimation;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        /*spriteRenderer = GetComponent<SpriteRenderer>();
 
         cloneTexture = Instantiate(baseTexture);
         cloneTexture.alphaIsTransparency = true;
 
         UpdateTexture();
 
-        gameObject.AddComponent<PolygonCollider2D>();
+        gameObject.AddComponent<PolygonCollider2D>();*/
 
-        acornMissAnimation = GetComponent<Animator>();
+       // acornMissAnimation = GetComponent<Animator>();
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Acorn"))
+        {
 
-    public float WidthWorld
+            acornMiss.Play();
+            //acornMissAnimation.Play("acornExplode");
+            Destroy(collision.gameObject);
+        }
+    }
+    /*public float WidthWorld
     {
         get 
         {
@@ -83,19 +92,9 @@ public class Ground : MonoBehaviour
 {
 
     spriteRenderer.sprite = Sprite.Create(cloneTexture, new Rect(0, 0, cloneTexture.width, cloneTexture.height), new Vector2(0.5f, 0.5f), 50f);
-}
+}*/
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Acorn"))
-        {
-
-            acornMiss.Play();
-            acornMissAnimation.Play("acornExplode");
-            Destroy(collision.gameObject);
-        }
-    }
-
+    
 
 
 } // Class

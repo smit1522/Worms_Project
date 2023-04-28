@@ -51,7 +51,7 @@ public class SquirrelManager : MonoBehaviour
         int nextSquirrel = currentSquirrel + 1;
         currentSquirrel -= 1;
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         currentSquirrel = nextSquirrel;
 

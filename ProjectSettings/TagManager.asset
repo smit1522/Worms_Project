@@ -7,6 +7,8 @@ TagManager:
   - Acorn
   - Tree
   - Ground
+  - squirrel2
+  - squirrel1
   layers:
   - Default
   - TransparentFX

@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 2159031242122505501}
   - component: {fileID: 3624729900047362066}
   m_Layer: 0
-  m_Name: squirrel
+  m_Name: squirrel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   walkSpeed: 5
   maxRelativeVelocity: 5000
   missileForce: 5000
-  playerID: 1
+  playerID: 0
   squirrelFootsteps: {fileID: 0}
 --- !u!114 &4594557290505906401
 MonoBehaviour:

@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4594557289877172144}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.003, y: 0, z: 0}
   m_LocalScale: {x: 1.2499999, y: 1.2499999, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -209,7 +209,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: c6d7435270c503b438af6e345c5bd4fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 2159031242122505501}
   - component: {fileID: 3624729900047362066}
   m_Layer: 0
-  m_Name: squirrel
+  m_Name: squirrel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,11 +460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acornPrefab: {fileID: 1896315304302573453, guid: 723714ec171353f4a8108db019a1d396, type: 3}
-  currentGun: {fileID: 8763495834734536006, guid: 723714ec171353f4a8108db019a1d396, type: 3}
+  currentGun: {fileID: 4594557289877172145}
   walkSpeed: 5
   maxRelativeVelocity: 5000
   missileForce: 5000
-  playerID: 1
+  playerID: 0
   squirrelFootsteps: {fileID: 0}
 --- !u!114 &4594557290505906401
 MonoBehaviour:
@@ -486,7 +486,7 @@ MonoBehaviour:
   gameOverAudio: {fileID: 0}
   gameStartAudio: {fileID: 0}
   squirrelHit: {fileID: 0}
-  bullsEye: {fileID: 2159031242122505501}
+  bullsEye: {fileID: 2159031242122505501, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
   healthTxt: {fileID: 4594557289637778204}
 --- !u!70 &4594557290505906400
 CapsuleCollider2D:

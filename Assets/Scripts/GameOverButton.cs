@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuFunction : MonoBehaviour
+public class GameOverButton : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,10 +17,8 @@ public class MainMenuFunction : MonoBehaviour
         
     }
 
-    public void PlayGame()
+    public void MainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
-
-    
 }
