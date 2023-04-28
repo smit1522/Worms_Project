@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class TreeAudio : MonoBehaviour
 {
-    public AudioSource acornMiss;
+    public AudioSource hitTree;
 
-    void Start()
-    {
-        acornMiss = GetComponent<AudioSource>();
-    }
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Acorn"))
         {
-            acornMiss.Play();
+            hitTree.Play();
            
         }
     }

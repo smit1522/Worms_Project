@@ -26,6 +26,7 @@ public class SquirrelHealth : MonoBehaviour
     public AudioSource gameOverAudio;
     public AudioSource gameStartAudio;
     public AudioSource squirrelHit;
+    public Animator bullsEye;
 
     bool m_HasStartAudioPlayed;
     bool m_HasEndAudioPlayed;
@@ -46,6 +47,7 @@ public class SquirrelHealth : MonoBehaviour
                 gameStartAudio.Play();
                 m_HasStartAudioPlayed = true;
             }
+        bullsEye = GetComponent<Animator>();
 
     }
 
@@ -66,6 +68,8 @@ public class SquirrelHealth : MonoBehaviour
         if(collision.CompareTag("Acorn"))
         {
             squirrelHit.Play();
+            bullsEye.Play("squirrelHit");
+            Destroy(collision.gameObject);
         }
     }
 

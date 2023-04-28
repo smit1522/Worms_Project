@@ -7,13 +7,13 @@ public class AcornAnimation : MonoBehaviour
 {
     public Animator acornMiss;
     public Animator acornHit;
-    public AudioSource acornMissAudio;
+    
 
 
     void Start()
     {
         acornMiss = GetComponent<Animator>();
-        acornMissAudio = GetComponent<AudioSource>();
+        
 
     }
 
@@ -21,7 +21,7 @@ public class AcornAnimation : MonoBehaviour
     {
         if (collision.CompareTag("Tree"))
         {
-            acornMissAudio.Play();
+            
             acornMiss.Play("acornExplode");
             Destroy(this.gameObject, 0.5f);
         }

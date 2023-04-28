@@ -1777,7 +1777,7 @@ GameObject:
   - component: {fileID: 173963162}
   - component: {fileID: 173963161}
   m_Layer: 0
-  m_Name: MissAudio2
+  m_Name: TreeHitAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19728,7 +19728,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956812342}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -19785,7 +19785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7467f578610b44cba64be78501b04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acornMiss: {fileID: 173963161}
+  hitTree: {fileID: 173963161}
 --- !u!1 &1958878290
 GameObject:
   m_ObjectHideFlags: 0
@@ -22981,5 +22981,9 @@ PrefabInstance:
       propertyPath: squirrelHit
       value: 
       objectReference: {fileID: 484470143}
+    - target: {fileID: 4594557290505906406, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
+      propertyPath: missileForce
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d125e66d0bfd2d4f94825bc4ec16740, type: 3}
