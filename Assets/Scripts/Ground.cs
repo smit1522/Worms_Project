@@ -16,6 +16,7 @@ public class Ground : MonoBehaviour
     private float _widthPixel, _heightPixel;
 
     public AudioSource acornMiss;
+    public Animator acornMissAnimation;
 
 
 
@@ -30,6 +31,8 @@ public class Ground : MonoBehaviour
         UpdateTexture();
 
         gameObject.AddComponent<PolygonCollider2D>();
+
+        acornMissAnimation = GetComponent<Animator>();
     }
 
     public float WidthWorld
@@ -86,7 +89,10 @@ public class Ground : MonoBehaviour
     {
         if (collision.CompareTag("Acorn"))
         {
+
             acornMiss.Play();
+            acornMissAnimation.Play("acornExplode");
+            Destroy(collision.gameObject);
         }
     }
 
